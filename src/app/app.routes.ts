@@ -6,7 +6,9 @@ import {BooksComponent} from "./books/books.component";
 import {BookComponent} from "./books/book/book.component";
 import {LoginComponent} from "./login/login.component";
 import {AdminComponent} from "./admin/admin.component";
+import { AuthorComponent } from './author/author.component';
 import {loggedInGuard} from "./logged-in.guard";
+import { Author } from './books/model/book';
 
 const booksRoutes: Routes = [
   {path: ':id', component: BookComponent}
@@ -25,6 +27,7 @@ export const routes: Routes = [
   {path: 'books', component: BooksComponent,
     children: booksRoutes
   },
+  { path: 'author', component: AuthorComponent },
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', component: HomeComponent}
 ];
